@@ -65,6 +65,7 @@ class AblationCAM(CAM):
                                                 
             weights = (class_score - zero_out_scores) / class_score
             cam = tf.reduce_sum(weights * feature, 3)
+            cam = tf.nn.relu(cam)
             cam -= tf.reduce_min(cam)
             cam = cam / tf.reduce_max(cam) * 255
             cam = cam.numpy().transpose(1, 2, 0).astype(np.uint8)
