@@ -70,9 +70,9 @@ class AblationCAM(CAM):
             cam = cam / tf.reduce_max(cam) * 255
             cam = cam.numpy().transpose(1, 2, 0).astype(np.uint8)
             cam = cv2.resize(cam, img.shape[:2][::-1])
-            cam = cv2.applyColorMap(cam, cv2.COLORMAP_JET)       
+            cam = cv2.applyColorMap(cam, cv2.COLORMAP_JET)[..., ::-1]   
             
-            overlay = np.uint8(0.6 * img + 0.4 * cam)[..., ::-1]
+            overlay = np.uint8(0.6 * img + 0.4 * cam)
             
         return output['output'], overlay
   
