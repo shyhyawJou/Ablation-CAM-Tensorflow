@@ -26,8 +26,9 @@ python show.py -d cpu -img assets/n01669191_46.JPEG -layer {layer name} -m {your
 - Generally, the layer is deeper, the interpretaton is better. Accordingly, using the last layer before last global average layer to plot heatmap would be a nice choice.
 - add command parameter `-speedup` will plot heatmap much faster, however, it is memory-expensive, that is, it is a trade off. If the memory is exhausted, you should don't add this parameter in command line. 
 
-# Other inplementation of CAM method
+# All inplementation of CAM method
 | Method   | Framework |
 | :-----:  | :--------: |
-| [Grad-CAM](https://github.com/shyhyawJou/GradCAM-pytorch) | Pytorch | 
-| [Eigen-CAM](https://github.com/shyhyawJou/EigenCAM-Pytorch) | Pytorch |
+| Grad-CAM | [Pytorch](https://github.com/shyhyawJou/GradCAM-pytorch) | 
+| Eigen-CAM | [Pytorch](https://github.com/shyhyawJou/EigenCAM-Pytorch)/[Tensorflow](https://github.com/shyhyawJou/Eigen-CAM-Tensorflow) |
+| Ablation-CAM | [Tensorflow](https://github.com/shyhyawJou/Ablation-CAM-Tensorflow) |
